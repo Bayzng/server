@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
@@ -18,6 +20,8 @@ dotenv.config();
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+
+
 
 // Cloudinary configuration
 cloudinary.config({
@@ -67,9 +71,13 @@ app.use("/api/giftcards", giftCardRoute);
 
 
 // Connect to MongoDB and start the server
-mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI, {
+  serverSelectionTimeoutMS: 10000
+})
   .then(() => {
     app.listen(PORT, () => console.log(`Server is running on PORT 🏃‍♂️${PORT}`));
   })
   .catch((err) => console.log(err));
+
+
+  
