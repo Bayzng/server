@@ -32,7 +32,8 @@ const successRedirect = async (req, res) => {
     });
 
     //   Redirect or send a response as needed
-    res.redirect(`http://localhost:5173/auth/google-verify?token=${token}`);
+    res.redirect(`https://giftify-kohl.vercel.app/auth/google-verify?token=${token}`);
+    // res.redirect(`http://localhost:5173/auth/google-verify?token=${token}`);
   } catch (error) {
     // Handle errors
     console.error("Error fetching user profile:", error);

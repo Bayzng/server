@@ -64,7 +64,8 @@ const createGiftCard = async (req, res) => {
           button: {
             color: '#22BC66', // Optional action button color
             text: 'Redeem your gift card',
-            link: 'http://localhost:5173/redeem',
+            link: 'https://giftify-kohl.vercel.app/redeem',
+            // link: 'http://localhost:5173/redeem',
           },
         },
         outro: 'Thank you for using PayGifty!',

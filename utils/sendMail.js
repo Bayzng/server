@@ -32,7 +32,8 @@ const sendConfirmationMail = ({ email: userEmail, name, token }, res) => {
         button: {
           color: "#22BC66", // Optional action button color
           text: "Confirm your account",
-          link: `http://localhost:5173/verify-access/${token}`,
+          link: `https://giftify-kohl.vercel.app/verify-access/${token}`,
+          // link: `http://localhost:5173/verify-access/${token}`,
         },
       },
       outro:
